@@ -4,7 +4,7 @@ import Home from '@/routes/home'
 function App() {
   return (
     <Routes>
-      <Route path="/a" element={<Home />} />
+      <Route path="/" element={<Home />} />
     </Routes>
   )
 }
