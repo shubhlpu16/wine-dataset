@@ -3,13 +3,13 @@ export interface Wine {
   'Malic Acid': string | number
   Ash: string | number
   'Alcalinity of ash': string | number
-  Magnesium: number
+  Magnesium: string | number
   'Total phenols': string | number
   Flavanoids: string | number
   'Nonflavanoid phenols': string | number
   Proanthocyanins: string | number
   'Color intensity': string | number
-  Hue: number
+  Hue: string | number
   'OD280/OD315 of diluted wines': string | number
   Unknown: number
 }

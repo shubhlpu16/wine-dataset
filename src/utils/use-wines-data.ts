@@ -8,23 +8,36 @@ import {
 } from '@/utils/math-functions'
 import { useMemo } from 'react'
 
-interface WineStats {
+export interface WineStats {
   mean: number
   mode: number
   median: number
 }
 
-export const useWineData = () => {
+interface WineArgs {
+  statType?: 'Flavanoids' | 'Gamma'
+}
+
+export const useWineData = ({ statType = 'Flavanoids' }: Partial<WineArgs>) => {
   const wineStats = useMemo(() => {
     const wineClasses: { [key: string]: (string | number)[] } = {}
 
     wines.forEach((wine) => {
       const key = wine['Alcohol']
-      const flavanoids = wine['Flavanoids']
-      if (!wineClasses[key]) {
-        wineClasses[key] = [flavanoids]
+      const flavanoids = parseFloat(wine['Flavanoids'] as string)
+      let statValue
+      if (statType === 'Gamma') {
+        const ash = parseFloat(wine['Ash'] as string)
+        const hue = parseFloat(wine['Hue'] as string)
+        const magnesium = parseFloat(wine['Magnesium'] as string)
+        statValue = (ash * hue) / magnesium
       } else {
-        wineClasses[key] = [...wineClasses[key], flavanoids]
+        statValue = flavanoids
+      }
+      if (!wineClasses[key]) {
+        wineClasses[key] = [statValue]
+      } else {
+        wineClasses[key] = [...wineClasses[key], statValue]
       }
     })
 
