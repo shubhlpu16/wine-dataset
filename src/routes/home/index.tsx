@@ -1,7 +1,10 @@
 import logo from '@/logo.svg'
 import './ home.css'
+import { useWineData } from '@/utils/use-wines-data'
 
 function Home() {
+  const winesData = useWineData()
+  console.log('🚀 ~ file: index.tsx:7 ~ Home ~ winesData:', winesData)
   return (
     <div className="App">
       <header className="App-header">
