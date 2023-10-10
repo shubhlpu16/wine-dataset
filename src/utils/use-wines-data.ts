@@ -1,4 +1,4 @@
-import { wines, type Wine } from '@/wines'
+import { wines } from '@/wines'
 import {
   calculateMean,
   calculateMode,
