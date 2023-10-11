@@ -1,3 +1,5 @@
+//Stats table
+
 import { WineStats } from '@/utils/use-wines-data'
 import './style.css'
 
@@ -7,6 +9,7 @@ interface StatsTableProps {
   statsType: 'Flavanoids' | 'Gamma'
 }
 export const StatsTable = ({ columns, rows, statsType }: StatsTableProps) => {
+  // generating arrays for mean mode median
   const meanArray = Object.keys(rows).map((row) => rows[row].mean)
   const medianArray = Object.keys(rows).map((row) => rows[row].median)
   const modeArray = Object.keys(rows).map((row) => rows[row].mode)
