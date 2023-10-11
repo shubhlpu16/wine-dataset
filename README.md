@@ -69,8 +69,3 @@ Feel free to contribute to this project. Create a pull request or open an issue 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-```
-
-Please make sure to replace `yourusername` and `your-repo` with your actual GitHub username and repository name. This `README.md` provides detailed information about the project, including installation instructions, available scripts, project structure, and contribution guidelines.
-```
